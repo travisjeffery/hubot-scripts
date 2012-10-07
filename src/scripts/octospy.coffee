@@ -335,6 +335,7 @@ module.exports = (robot) ->
     # Convenience accessors
     event = req.params.event
     repo_name =  (req.body.repository.owner.login || req.body.repository.owner.name) + "/" + req.body.repository.name
+    repo_name = repo_name.toLowerCase()
     github_url = req.params.github
 
     # Extend the context for our templates
